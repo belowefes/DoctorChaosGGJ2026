@@ -93,27 +93,12 @@ public class MedicalCoach : MonoBehaviour
     public void OnTimerFinish(float duration)
     {
         Destroy(this.gameObject);
-        // PickupItem currentItem = null;
-        //
-        // switch (organsPool.Count)
-        // {   
-        //     case 0:
-        //         return;
-        //     case 1:
-        //         currentItem = organsPool[0];
-        //         break;
-        //     default:
-        //         currentItem = organsPool[Random.Range(0, organsPool.Count)];
-        //         break;
-        // }
-        // mat.SetFloat("_Arc1", 0);
-        // putIn(currentItem);
     }
     
     public void OnTimerTick(float progress)
     {
         if (mat == null) return;
-        mat.SetFloat("_Arc1", 360f-progress * 360f);
+        mat.SetFloat("_Arc1", progress * 360f);
     }
 
     void onSaved()

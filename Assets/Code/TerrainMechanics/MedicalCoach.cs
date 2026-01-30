@@ -48,7 +48,6 @@ public class MedicalCoach : MonoBehaviour
     
     void SetIcon(Sprite sprite)
     {
-        Debug.Log(iconRenderer, sprite);
         if (iconRenderer == null || sprite == null) return;
         SpriteUtils.SetPicture(sprite, iconRenderer);
         // Debug.Log($"spriteSize={spriteSize}, maxSide={maxSide}, scale={iconHolder.transform.localScale}");
@@ -67,7 +66,6 @@ public class MedicalCoach : MonoBehaviour
         {   
             case 0:
                 throw new NullReferenceException("There are no active items on the pool for medical coach");
-                return;
             case 1:
                 currentItem = organsPool[0];
                 break;
@@ -86,7 +84,7 @@ public class MedicalCoach : MonoBehaviour
         {
             return;
         }
-        print("setting up icon from " + item.name);
+        // print("setting up icon from " + item.name);
         SetIcon(item.icon);
     }
     
@@ -107,4 +105,6 @@ public class MedicalCoach : MonoBehaviour
         timer.enabled = false;
         timerVisualRenderer.enabled = false;
     }
+    
+    
 }

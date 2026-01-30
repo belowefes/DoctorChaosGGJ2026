@@ -53,6 +53,9 @@ TagManager:
   - name: Characters
     uniqueID: 2085528303
     locked: 0
+  - name: TerrainFront
+    uniqueID: 3536486337
+    locked: 0
   - name: UI
     uniqueID: 987880673
     locked: 0

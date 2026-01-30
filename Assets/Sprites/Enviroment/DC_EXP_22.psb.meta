@@ -50,7 +50,7 @@ ScriptedImporter:
     flipbookColumns: 0
     ignorePngGamma: 0
     cookieMode: 0
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 0
@@ -83,7 +83,7 @@ ScriptedImporter:
       y: 0
       width: 0
       height: 0
-    spriteID: 801ff3f1d45e8524b85baf7a5bb9d0d6
+    spriteID: 9d2dda4005605c74ca4a023090285d7a
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -95,51 +95,7 @@ ScriptedImporter:
     spritePosition: {x: 0, y: 0}
   multiSpriteImportData: []
   layeredSpriteImportData:
-  - name: Layer 3
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 2963
-      y: 4
-      width: 2951
-      height: 2295
-    spriteID: d7eaf4c2d3c857b4795c4f8dc07d3e8b
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 2963, y: 4}
-    spritePosition: {x: 0, y: 441}
-  - name: BackTent
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 6109
-      width: 2951
-      height: 2001
-    spriteID: 1773ddadc98531940a6a35d317d9fd2c
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 6109}
-    spritePosition: {x: 0, y: 1106}
-  - name: Layer 2
+  - name: FrontTent
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -149,9 +105,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 3167
-      width: 2950
-      height: 2934
-    spriteID: 700f8e16cf6149f44ac7c1fd4f983e9a
+      width: 2951
+      height: 2295
+    spriteID: a6e021bc37a43a748ac8366ac904fc5c
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -160,8 +116,30 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 3167}
-    spritePosition: {x: 0, y: 221}
-  - name: GrassBack
+    spritePosition: {x: 0, y: 441}
+  - name: BackTent
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 2963
+      y: 3167
+      width: 2951
+      height: 2001
+    spriteID: 120fb708869b458499c26ee0d81da1b8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2963, y: 3167}
+    spritePosition: {x: 0, y: 1106}
+  - name: Trees
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -173,7 +151,7 @@ ScriptedImporter:
       y: 4
       width: 2951
       height: 3155
-    spriteID: d2b8c4e02c8b6504b841cbf276b64660
+    spriteID: fbc14ddb8e0d4e34aa2abda77da18fbe
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -182,6 +160,28 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
+    spritePosition: {x: 0, y: 0}
+  - name: Grass
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 2963
+      y: 4
+      width: 2951
+      height: 3155
+    spriteID: 56965636d06ddc04ba0e5c3c7b43a02d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2963, y: 4}
     spritePosition: {x: 0, y: 0}
   spriteImportData: []
   rigSpriteImportData: []
@@ -205,7 +205,7 @@ ScriptedImporter:
   - name: DefaultTexturePlatform
     overridden: 0
     ignorePlatformSupport: 0
-    maxTextureSize: 4096
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -278,13 +278,13 @@ ScriptedImporter:
   resliceFromLayer: 0
   pSDLayerImportSetting: []
   psdLayers:
-  - name: Layer 3
-    spriteName: Layer 3
+  - name: FrontTent
+    spriteName: FrontTent
     isGroup: 0
     parentIndex: -1
-    spriteID: d7eaf4c2d3c857b4795c4f8dc07d3e8b
+    spriteID: a6e021bc37a43a748ac8366ac904fc5c
     layerID: 24
-    mosaicPosition: {x: 2963, y: 4}
+    mosaicPosition: {x: 4, y: 3167}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -292,29 +292,29 @@ ScriptedImporter:
     spriteName: BackTent
     isGroup: 0
     parentIndex: -1
-    spriteID: 1773ddadc98531940a6a35d317d9fd2c
-    layerID: 12
-    mosaicPosition: {x: 4, y: 6109}
+    spriteID: 120fb708869b458499c26ee0d81da1b8
+    layerID: 112
+    mosaicPosition: {x: 2963, y: 3167}
     flatten: 0
     isImported: 1
     isVisible: 1
-  - name: Layer 2
-    spriteName: Layer 2
+  - name: Trees
+    spriteName: Trees
     isGroup: 0
     parentIndex: -1
-    spriteID: 700f8e16cf6149f44ac7c1fd4f983e9a
+    spriteID: fbc14ddb8e0d4e34aa2abda77da18fbe
     layerID: 18
-    mosaicPosition: {x: 4, y: 3167}
+    mosaicPosition: {x: 4, y: 4}
     flatten: 0
     isImported: 1
     isVisible: 1
-  - name: GrassBack
-    spriteName: GrassBack
+  - name: Grass
+    spriteName: Grass
     isGroup: 0
     parentIndex: -1
-    spriteID: d2b8c4e02c8b6504b841cbf276b64660
-    layerID: 10
-    mosaicPosition: {x: 4, y: 4}
+    spriteID: 56965636d06ddc04ba0e5c3c7b43a02d
+    layerID: 48
+    mosaicPosition: {x: 2963, y: 4}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -322,7 +322,7 @@ ScriptedImporter:
   rigPSDLayers: []
   sharedRigPSDLayers: []
   importFileNodeState: 1
-  platformSettingsDirtyTick: 639054051477024950
+  platformSettingsDirtyTick: 639054153167389388
   spriteSizeExpandChanged: 0
   generateGOHierarchy: 0
   textureAssetName: 

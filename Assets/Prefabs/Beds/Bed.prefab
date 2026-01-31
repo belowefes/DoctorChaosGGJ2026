@@ -354,7 +354,7 @@ MonoBehaviour:
   requirementSlot: {fileID: 0}
   timer: {fileID: 6526831045479670364}
   iconRenderer: {fileID: 2069516733485389407}
-  iconHeight: 1
+  iconHeight: 0.6
   timerVisualRenderer: {fileID: 5833054509963445225}
   organsPool:
   - {fileID: 11400000, guid: 6851d65a66765c64e93bb35797c9f36e, type: 2}

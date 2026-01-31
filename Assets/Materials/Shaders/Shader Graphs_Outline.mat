@@ -59,6 +59,6 @@ Material:
     - _Thickness2: 0.05
     m_Colors:
     - White: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 0.9528302, g: 0.9303578, b: 0.91237986, a: 0}
+    - _Color: {r: 0.8962264, g: 0.8272999, b: 0.68485224, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

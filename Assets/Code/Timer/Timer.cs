@@ -45,6 +45,17 @@ namespace Code.Timer
             _finalDuration += duration;
         }
 
+        public bool SetDuration(float duration)
+        {
+            if (duration <= 0)
+            {
+                return false;
+            }
+            this.duration = duration;
+            _finalDuration = duration + Random.Range(randomRange.min, randomRange.max);
+            return true;
+        }
+
         public bool StartTimer()
         {
             if (duration <= 0)

@@ -799,21 +799,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd2d9a599831e444c8ae9774ee981136, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PointsScales
-  currentScore: -6
+  currentScore: 2
   textRenderer: {fileID: 670606562}
   scorePerDead: -1
   scorePerSaved: 1
   musicSource: {fileID: 605966660}
   musicRanges:
-  - minScore: 0
+  - minScore: 1
     maxScore: 100
-    clip: {fileID: 8300000, guid: 082e94f3edfa29f4d9e2d393fb66c29e, type: 3}
-  - minScore: -1
-    maxScore: -6
+    clip: {fileID: 8300000, guid: f437b44093e73f74a8ab243083c86682, type: 3}
+  - minScore: -5
+    maxScore: 0
     clip: {fileID: 8300000, guid: 89a875ec2db4a7b498c5e838f3df91ed, type: 3}
-  - minScore: -10
-    maxScore: -7
+  - minScore: -9
+    maxScore: -6
     clip: {fileID: 8300000, guid: 31127dddf34a58d4382f4cfcd57ef9f0, type: 3}
+  - minScore: -100
+    maxScore: -10
+    clip: {fileID: 8300000, guid: b1d5b71b836c878458521107f8e4f1ab, type: 3}
   scoreImage: {fileID: 1000099158}
   scoreGradient:
     serializedVersion: 2
@@ -979,6 +982,8 @@ MonoBehaviour:
   timer: {fileID: 408037326}
   bedPrefab: {fileID: 4501421540918975941, guid: c55a5b34f33a2bf45bd77c5dd86dd90f, type: 3}
   parentBedsObject: {fileID: 1999106476}
+  bedOrganSwitchDuration: 0
+  organAmountRequired: 0
 --- !u!4 &480694678 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1150172683389350549, guid: 1a8f36a8c12b5c444a7912e97ea3ede4, type: 3}
@@ -1567,6 +1572,50 @@ MonoBehaviour:
     m_RotationOrder: 4
   progressiveMode: 1
   duration: 1
+--- !u!1 &529038041
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 529038042}
+  - component: {fileID: 529038043}
+  m_Layer: 0
+  m_Name: DificultySystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &529038042
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529038041}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.25929, y: 3.56121, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &529038043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529038041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55143fdd876142b1a0d99ec60c133b62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Code.Dificulty.DifficultySystem
 --- !u!1001 &564670815
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5597,3 +5646,4 @@ SceneRoots:
   - {fileID: 159521765}
   - {fileID: 391559762}
   - {fileID: 605966661}
+  - {fileID: 529038042}

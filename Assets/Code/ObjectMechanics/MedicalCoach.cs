@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Code.Inventary;
+using Code.Difficulty;
 using Code.Timer;
 using Code.Utils;
 using UnityEngine;
@@ -148,5 +149,15 @@ public class MedicalCoach : MonoBehaviour
         {
             sourceBedSound.Stop();
         }
+    }
+
+    public void SetOrganSwitchDuration(float organSwitchDuration)
+    {
+        this.timer.SetDuration(organSwitchDuration);
+    }
+    
+    public void SetOrgansRequired(int amount)
+    {
+        this.organAmountRequired = amount;
     }
 }

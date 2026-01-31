@@ -108,4 +108,9 @@ public class OrganPedestal : MonoBehaviour
         if (mat == null) return;
         mat.SetFloat("_Arc1", 360f-progress * 360f);
     }
+
+    public void SetSpawnDuration(float spawnDuration)
+    {
+        this.timer.SetDuration(spawnDuration);
+    }
 }

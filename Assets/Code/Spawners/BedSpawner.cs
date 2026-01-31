@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using Code.Difficulty;
 using Code.Timer;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -12,6 +13,8 @@ public class BedSpawner : MonoBehaviour
     [SerializeField] private Timer timer;
     [SerializeField] private GameObject bedPrefab;
     [SerializeField] private GameObject parentBedsObject;
+    [SerializeField] private float bedOrganSwitchDuration;
+    [SerializeField] private int organAmountRequired;
     
     
     
@@ -36,10 +39,6 @@ public class BedSpawner : MonoBehaviour
         }
     }
     
-    // public void OnTimerTick(float progress)
-    // {
-    // }
-    
     public void OnTimerFinish(float duration)
     {
         timer.StartTimer();
@@ -54,12 +53,17 @@ public class BedSpawner : MonoBehaviour
             parentBedsObject?.transform
         );
         MedicalCoach medicalCoach = newBed.GetComponent<MedicalCoach>();
+        medicalCoach.SetOrganSwitchDuration(bedOrganSwitchDuration);
+        medicalCoach.SetOrgansRequired(organAmountRequired);
         
     }
     
-    
-    public void SetMaxBedsOnTheLevel(int value)
+    public void SetDifficultyPreset(DifficultyPreset preset)
     {
-        maxBedsOnTheLevel = value;
+        this.maxBedsOnTheLevel = preset.maxBedsOnTheLevel;
+        this.timer.SetDuration(preset.bedSpawnDuration);
+        this.bedOrganSwitchDuration = preset.bedOrganSwitchDuration;
+        this.organAmountRequired = preset.organsPerBedRequired;
     }
+
 }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Heart
   m_EditorClassIdentifier: Assembly-CSharp::Code.Inventary.PickupItem
   itemName: Heart
-  icon: {fileID: 3904435510573995579, guid: c2d3d153d03fbc2468c53ef4d34baa79, type: 3}
+  icon: {fileID: 4606908045521496030, guid: 0a7a17de2cabde545977e86c8e435907, type: 3}
   respChance: 0
   pickupType: 0
   timeResource: 10

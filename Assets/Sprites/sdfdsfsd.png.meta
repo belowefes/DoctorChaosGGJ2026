@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6513a4d3e83ccb640be2372c55fd1d7c
+guid: 92bd02dbc7d5885469ad1ce5cc63b88a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 9034600303001396394
-    second: liver_temp_asset_0
+      213: 5996271771908839080
+    second: sdfdsfsd_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,17 +109,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: liver_temp_asset_0
+      name: sdfdsfsd_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 570
-        height: 512
+        width: 293
+        height: 685
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: aa4e804bb19516d70800000000000000
-      internalID: 9034600303001396394
+      spriteID: 8a6145d2869073350800000000000000
+      internalID: 5996271771908839080
       vertices: []
       indices: 
       edges: []
@@ -148,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      liver_temp_asset_0: 9034600303001396394
+      sdfdsfsd_0: 5996271771908839080
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

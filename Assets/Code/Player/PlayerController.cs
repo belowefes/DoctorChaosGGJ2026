@@ -43,12 +43,12 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 moveDirection = moveInput.ReadValue<Vector2>();
         rb.linearVelocity = moveDirection.normalized * moveSpeed;
-        if (moveDirection!=Vector2.zero && !sourceStepSound.isPlaying)
+        if (moveDirection!=Vector2.zero && sourceStepSound != null && !sourceStepSound.isPlaying)
         {
             sourceStepSound.Play();
         }
 
-        if (moveDirection == Vector2.zero && sourceStepSound.isPlaying)
+        if (moveDirection == Vector2.zero && sourceStepSound != null && sourceStepSound.isPlaying)
         {
             sourceStepSound.Stop();
         }
@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour
         }
         if (pickup.pickupType == PickupType.Organ)
         {
-            sourceOrganSound.Play();
+            sourceOrganSound?.Play();
             SetInHands(pickup);
             return true;
         }

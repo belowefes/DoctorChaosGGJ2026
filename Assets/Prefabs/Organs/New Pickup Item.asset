@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: New Pickup Item
   m_EditorClassIdentifier: Assembly-CSharp::Code.Inventary.PickupItem
   itemName: 
-  icon: {fileID: 0}
+  icon: {fileID: 540803829919948875, guid: bb29e656e74189c48bb7f2bc3afdae1e, type: 3}
   respChance: 0
   pickupType: 0
+  timeResource: 0

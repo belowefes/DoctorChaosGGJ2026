@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Liver
   m_EditorClassIdentifier: Assembly-CSharp::Code.Inventary.PickupItem
   itemName: Liver
-  icon: {fileID: 9034600303001396394, guid: 6513a4d3e83ccb640be2372c55fd1d7c, type: 3}
+  icon: {fileID: -7848446433136509122, guid: bf7ae15e8194ea14792f5aaa69f71d5a, type: 3}
   respChance: 0
   pickupType: 0
   timeResource: 6

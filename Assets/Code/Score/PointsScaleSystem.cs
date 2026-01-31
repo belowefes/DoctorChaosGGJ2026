@@ -14,7 +14,7 @@ public class PointsScaleSystem : MonoBehaviour
     [SerializeField] private int scorePerDead = -1;
     [SerializeField] private int scorePerSaved = +1;
     
-    [SerializeField] private AudioSource musicSource;
+    [SerializeField] private AudioSource musicSource, MusicStepSource;
     [SerializeField] private List<ScoreMusicRange> musicRanges;
     private int _currentRangeIndex = -1;
     
@@ -93,6 +93,7 @@ public class PointsScaleSystem : MonoBehaviour
             var range = musicRanges[rangeIndex];
             
             musicSource.clip = range.clip;
+            MusicStepSource?.Play();
             musicSource.Play();
         }
     }

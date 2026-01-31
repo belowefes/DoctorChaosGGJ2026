@@ -72,8 +72,31 @@ public class PlayerController : MonoBehaviour
 
     void SetInHands(PickupItem pickup)
     {
+        if (pickup == null)
+        {
+            inHandsRenderer.gameObject.SetActive(false);
+            currentPickupInHands = null;
+            return;
+        }
+        
         inHandsRenderer.gameObject.SetActive(true);
         currentPickupInHands = pickup;
         SpriteUtils.SetPicture(pickup.icon, inHandsRenderer);
+    }
+
+    public bool TryRequirementAgainstHand(PickupItem pickup)
+    {
+        if (this.currentPickupInHands == null)
+        {
+            return false;
+        }
+        return this.currentPickupInHands.name.Equals(pickup.name);
+    }
+    
+    public bool TryTakeItemFromHands()
+    {
+        if (this.currentPickupInHands == null) return false;
+        SetInHands(null);
+        return true;
     }
 }

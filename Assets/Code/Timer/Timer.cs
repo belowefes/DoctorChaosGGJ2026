@@ -40,6 +40,11 @@ namespace Code.Timer
             }
         }
 
+        public void AddDuration(float duration)
+        {
+            _finalDuration += duration;
+        }
+
         public bool StartTimer()
         {
             if (duration <= 0)

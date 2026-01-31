@@ -16,3 +16,4 @@ MonoBehaviour:
   icon: {fileID: 3904435510573995579, guid: c2d3d153d03fbc2468c53ef4d34baa79, type: 3}
   respChance: 0
   pickupType: 0
+  timeResource: 10

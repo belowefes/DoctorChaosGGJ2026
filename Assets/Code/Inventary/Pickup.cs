@@ -10,6 +10,7 @@ namespace Code.Inventary
         public Sprite icon;
         public int respChance;
         public PickupType pickupType;
+        public int timeResource;
     }
 
 }

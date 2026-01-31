@@ -10,7 +10,7 @@ public class MedicalCoach : MonoBehaviour
 {
     [SerializeField] private int organAmountRequired = 4;
     
-    [SerializeField] private PickupItem slot;
+    [SerializeField] private PickupItem requirementSlot;
     [SerializeField] private Timer timer;
     
     [SerializeField] private SpriteRenderer iconRenderer;
@@ -20,6 +20,7 @@ public class MedicalCoach : MonoBehaviour
     Material mat;
     
     [SerializeField] private List<PickupItem> organsPool;
+    private int _organLastUsedIndex = -1;
     
     private void Start()
     {
@@ -33,17 +34,8 @@ public class MedicalCoach : MonoBehaviour
             }
         }
         
-        if (slot == null)
-        {
-            timer.StartTimer();
-        }
-    }
-    
-    void Reset()
-    {
-        iconRenderer.sprite = null;
-        slot = null;
-        // timer.StartTimer();
+        NextLoop();
+        timer.StartTimer();
     }
     
     void SetIcon(Sprite sprite)
@@ -55,12 +47,13 @@ public class MedicalCoach : MonoBehaviour
     
     public void NextLoop()
     {
+        iconRenderer.sprite = null;
+        requirementSlot = null;
         if (organAmountRequired == 0)
         {
             onSaved();
             return;
         }
-        
         PickupItem currentItem = null;
         switch (organsPool.Count)
         {   
@@ -68,9 +61,16 @@ public class MedicalCoach : MonoBehaviour
                 throw new NullReferenceException("There are no active items on the pool for medical coach");
             case 1:
                 currentItem = organsPool[0];
+                _organLastUsedIndex = 0;
                 break;
             default:
-                currentItem = organsPool[Random.Range(0, organsPool.Count)];
+                int newOrganIndex = Random.Range(0, organsPool.Count);
+                while (_organLastUsedIndex == newOrganIndex)
+                {
+                    newOrganIndex = Random.Range(0, organsPool.Count);
+                }
+                currentItem = organsPool[newOrganIndex];
+                _organLastUsedIndex = newOrganIndex;
                 break;
         }
         putIn(currentItem);
@@ -79,7 +79,7 @@ public class MedicalCoach : MonoBehaviour
     
     void putIn(PickupItem item)
     {
-        this.slot = item;
+        this.requirementSlot = item;
         if (item == null)
         {
             return;
@@ -98,10 +98,24 @@ public class MedicalCoach : MonoBehaviour
         if (mat == null) return;
         mat.SetFloat("_Arc1", progress * 360f);
     }
+    
+    public void TryHelp(Collider2D helper)
+    {
+        if (helper.tag.Equals("Player"))
+        {
+            PlayerController player = helper.GetComponent<PlayerController>();
+            if (player.TryRequirementAgainstHand(this.requirementSlot) && player.TryTakeItemFromHands())
+            {
+                this.timer.AddDuration(this.requirementSlot.timeResource);
+                NextLoop();
+            }
+        }
+    }
 
     void onSaved()
     {
         print("SAVED");
+        timer.Stop();
         timer.enabled = false;
         timerVisualRenderer.enabled = false;
     }

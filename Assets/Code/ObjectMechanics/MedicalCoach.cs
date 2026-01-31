@@ -106,6 +106,7 @@ public class MedicalCoach : MonoBehaviour
 
     public void OnTimerFinish(float duration)
     {
+        PointsScaleSystem.instance.OnDeadBody();
         Destroy(this.gameObject);
     }
 
@@ -130,10 +131,11 @@ public class MedicalCoach : MonoBehaviour
 
     void onSaved()
     {
-        print("SAVED");
+        PointsScaleSystem.instance.OnSaved();
         timer.Stop();
         timer.enabled = false;
         timerVisualRenderer.enabled = false;
+        Destroy(gameObject);
     }
 
     private void FixedUpdate()

@@ -10,13 +10,11 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private InputAction moveInput;
+    [SerializeField] private InputAction dropInput;
     
     [SerializeField] private SpriteRenderer inHandsRenderer;
     [SerializeField] private PickupItem currentPickupInHands;
     [SerializeField] private AudioSource sourceStepSound, sourceOrganSound;
-    
-    
-    
         
     Rigidbody2D rb;
 
@@ -32,11 +30,13 @@ public class PlayerController : MonoBehaviour
     void OnEnable()
     {
         moveInput.Enable();
+        dropInput.Enable();
     }
 
     void OnDisable()
     {
         moveInput.Disable();
+        dropInput.Disable();
     }
 
     void FixedUpdate()
@@ -52,6 +52,14 @@ public class PlayerController : MonoBehaviour
         {
             sourceStepSound.Stop();
         }
+
+        bool dropOrgan = dropInput.IsPressed();
+
+        if (dropOrgan && currentPickupInHands != null)
+        {
+            SetInHands(null);
+        }
+        
     }
 
     public bool ReceiveOrgan(PickupItem pickup)
@@ -62,7 +70,6 @@ public class PlayerController : MonoBehaviour
         }
         if (pickup.pickupType == PickupType.Organ)
         {
-            sourceOrganSound?.Play();
             SetInHands(pickup);
             return true;
         }
@@ -72,6 +79,8 @@ public class PlayerController : MonoBehaviour
 
     void SetInHands(PickupItem pickup)
     {
+        sourceOrganSound?.Play();
+        
         if (pickup == null)
         {
             inHandsRenderer.gameObject.SetActive(false);

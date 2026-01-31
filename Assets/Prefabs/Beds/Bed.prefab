@@ -359,6 +359,7 @@ MonoBehaviour:
   organsPool:
   - {fileID: 11400000, guid: 6851d65a66765c64e93bb35797c9f36e, type: 2}
   - {fileID: 11400000, guid: ab923815a1ebe1946b07b50572adeb71, type: 2}
+  - {fileID: 11400000, guid: 10124ce5976096a4ba8a4ebf01c0f826, type: 2}
   sourceBedSound: {fileID: 2793239996406531139}
 --- !u!114 &6526831045479670364
 MonoBehaviour:

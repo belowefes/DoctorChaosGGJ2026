@@ -2,19 +2,20 @@ using System;
 using Code.Inventary;
 using Code.Utils;
 using UnityEngine;
-using UnityEngine.InputSystem;
+using UnityEngine.InputSystem;  
 
 
 public class PlayerController : MonoBehaviour
 {
+
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private InputAction moveInput;
     [SerializeField] private InputAction dropInput;
-
+    
     [SerializeField] private SpriteRenderer inHandsRenderer;
     [SerializeField] private PickupItem currentPickupInHands;
     [SerializeField] private AudioSource sourceStepSound, sourceOrganSound, sourcePutOrganSound;
-
+        
     Rigidbody2D rb;
 
     private void Awake()
@@ -22,11 +23,10 @@ public class PlayerController : MonoBehaviour
         if (inHandsRenderer == null)
         {
             throw new NullReferenceException("inHandsIcon spriter is missing");
-        }
-
+        } 
         rb = GetComponent<Rigidbody2D>();
     }
-
+    
     void OnEnable()
     {
         moveInput.Enable();
@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 moveDirection = moveInput.ReadValue<Vector2>();
         rb.linearVelocity = moveDirection.normalized * moveSpeed;
-        if (moveDirection != Vector2.zero && sourceStepSound != null && !sourceStepSound.isPlaying)
+        if (moveDirection!=Vector2.zero && sourceStepSound != null && !sourceStepSound.isPlaying)
         {
             sourceStepSound.Play();
         }
@@ -59,6 +59,7 @@ public class PlayerController : MonoBehaviour
         {
             SetInHands(null);
         }
+        
     }
 
     public bool ReceiveOrgan(PickupItem pickup)
@@ -67,7 +68,6 @@ public class PlayerController : MonoBehaviour
         {
             return false;
         }
-
         if (pickup.pickupType == PickupType.Organ)
         {
             sourceOrganSound?.Play();
@@ -86,7 +86,7 @@ public class PlayerController : MonoBehaviour
             currentPickupInHands = null;
             return;
         }
-
+        
         inHandsRenderer.gameObject.SetActive(true);
         currentPickupInHands = pickup;
         SpriteUtils.SetPicture(pickup.icon, inHandsRenderer);
@@ -94,22 +94,17 @@ public class PlayerController : MonoBehaviour
 
     public bool TryRequirementAgainstHand(PickupItem pickup)
     {
-        if (this.currentPickupInHands == null)
+        if (this.currentPickupInHands == null || pickup == null)
         {
             return false;
         }
-
         return this.currentPickupInHands.name.Equals(pickup.name);
     }
-
+    
     public bool TryTakeItemFromHands()
     {
         if (this.currentPickupInHands == null) return false;
-        if (sourceOrganSound != null)
-        {
-            sourcePutOrganSound.Play();
-        }
-
+        sourcePutOrganSound?.Play();
         SetInHands(null);
         return true;
     }

@@ -34,7 +34,7 @@ public class MedicalCoach : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         if (_rb == null)
         {
-            throw new NullReferenceException("MedicalCoach must have rigidbody: " + this.GetEntityId());
+            throw new NullReferenceException("MedicalCoach must have rigidbody: " + this.GetInstanceID());
         }
         
         if (timer == null)
@@ -43,7 +43,7 @@ public class MedicalCoach : MonoBehaviour
             if (timer == null)
             {
                 throw new NullReferenceException("MedicalCoach timer wasn't found on GameObject: " +
-                                                 this.GetEntityId());
+                                                 this.GetInstanceID());
             }
         }
 

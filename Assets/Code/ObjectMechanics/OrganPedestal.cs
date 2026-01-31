@@ -27,7 +27,7 @@ public class OrganPedestal : MonoBehaviour
             timer = this.GetComponent<Timer>();
             if (timer == null)
             {
-                throw new NullReferenceException("Pedestal timer wasn't found on GameObject: "+this.GetEntityId());
+                throw new NullReferenceException("Pedestal timer wasn't found on GameObject: "+this.GetInstanceID());
             }
         }
         

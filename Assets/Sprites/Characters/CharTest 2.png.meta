@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: adba85112e64c3643ab9ef34cda71a1d
+guid: 6809f94217dbc0341aa9af077124b583
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5110565397107477649
-    second: agala2_0
+      213: -4247029464963719487
+    second: CharTest 2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: agala2_0
+      name: CharTest 2_0
       rect:
         serializedVersion: 2
-        x: 19
-        y: 48
-        width: 198
-        height: 257
+        x: 0
+        y: 0
+        width: 96
+        height: 220
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 19c8ef7d6206ce640800000000000000
-      internalID: 5110565397107477649
+      spriteID: 1ce583e04358f05c0800000000000000
+      internalID: -4247029464963719487
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      agala2_0: 5110565397107477649
+      CharTest 2_0: -4247029464963719487
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

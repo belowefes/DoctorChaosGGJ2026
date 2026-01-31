@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     
     [SerializeField] private SpriteRenderer inHandsRenderer;
     [SerializeField] private PickupItem currentPickupInHands;
-    [SerializeField] private AudioSource sourceStepSound, sourceOrganSound;
+    [SerializeField] private AudioSource sourceStepSound, sourceOrganSound, sourcePutOrganSound;
         
     Rigidbody2D rb;
 
@@ -70,6 +70,7 @@ public class PlayerController : MonoBehaviour
         }
         if (pickup.pickupType == PickupType.Organ)
         {
+            sourceOrganSound?.Play();
             SetInHands(pickup);
             return true;
         }
@@ -79,8 +80,6 @@ public class PlayerController : MonoBehaviour
 
     void SetInHands(PickupItem pickup)
     {
-        sourceOrganSound?.Play();
-        
         if (pickup == null)
         {
             inHandsRenderer.gameObject.SetActive(false);
@@ -105,6 +104,7 @@ public class PlayerController : MonoBehaviour
     public bool TryTakeItemFromHands()
     {
         if (this.currentPickupInHands == null) return false;
+        sourcePutOrganSound?.Play();
         SetInHands(null);
         return true;
     }

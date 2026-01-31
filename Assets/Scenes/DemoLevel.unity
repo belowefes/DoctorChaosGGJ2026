@@ -1616,6 +1616,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55143fdd876142b1a0d99ec60c133b62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Code.Dificulty.DifficultySystem
+  difficultyPreset:
+    organsPerBedRequired: 0
+    maxBedsOnTheLevel: 0
+    bedSpawnDuration: 0
+    bedOrganSwitchDuration: 0
+    pedestalOrganDuration: 0
 --- !u!1001 &564670815
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1904,7 +1910,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.459
   m_Pitch: 1
   Loop: 1
   Mute: 0

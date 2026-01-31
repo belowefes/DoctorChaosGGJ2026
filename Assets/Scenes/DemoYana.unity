@@ -985,7 +985,7 @@ MonoBehaviour:
   timer: {fileID: 408037326}
   bedPrefab: {fileID: 4501421540918975941, guid: c55a5b34f33a2bf45bd77c5dd86dd90f, type: 3}
   parentBedsObject: {fileID: 1999106476}
-  bedOrganSwitchDuration: 0
+  bedDurationUntilDeath: 0
   organAmountRequired: 0
 --- !u!4 &480694678 stripped
 Transform:
@@ -1619,12 +1619,110 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55143fdd876142b1a0d99ec60c133b62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Code.Dificulty.DifficultySystem
+  maximumDifficultyTimePoint: 300
+  updateInterval: 2
   difficultyPreset:
     organsPerBedRequired: 2
     maxBedsOnTheLevel: 10
     bedSpawnDuration: 4
-    bedOrganSwitchDuration: 6
+    bedDurationUntilDeath: 0
     pedestalOrganDuration: 3
+    organsPerBedCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1.0115204
+        value: 0.6533356
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    maxBedsOnTheLevelCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    bedSpawnDurationCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.021203868
+        value: 0.0011991262
+        inSlope: -0.30721524
+        outSlope: -0.30721524
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1.002085
+        value: -0.3001425
+        inSlope: -0.30721524
+        outSlope: -0.30721524
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    bedDurationUntilDeathCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: -0.0033683777
+        value: 0.004714966
+        inSlope: 0.5041592
+        outSlope: 0.5041592
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.16163243
+      - serializedVersion: 3
+        time: 1.0002289
+        value: -0.30049986
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
 --- !u!1001 &564670815
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5073,9 +5171,9 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5452054, y: 0.33390608}
-    oldSize: {x: 1, y: 2.21}
-    newSize: {x: 1, y: 1}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.95, y: 6.87}
+    newSize: {x: 1.98, y: 2.57}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0

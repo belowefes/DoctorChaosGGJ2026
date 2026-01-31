@@ -8,7 +8,12 @@ namespace Code.Difficulty
         public int organsPerBedRequired;
         public int maxBedsOnTheLevel;
         public float bedSpawnDuration;
-        public float bedOrganSwitchDuration;
+        public float bedDurationUntilDeath;
         public float pedestalOrganDuration;
+        
+        public AnimationCurve organsPerBedCurve;
+        public AnimationCurve maxBedsOnTheLevelCurve;
+        public AnimationCurve bedSpawnDurationCurve;
+        public AnimationCurve bedDurationUntilDeathCurve;
     }
 }

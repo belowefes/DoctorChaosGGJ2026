@@ -13,7 +13,7 @@ public class BedSpawner : MonoBehaviour
     [SerializeField] private Timer timer;
     [SerializeField] private GameObject bedPrefab;
     [SerializeField] private GameObject parentBedsObject;
-    [SerializeField] private float bedOrganSwitchDuration;
+    [SerializeField] private float bedDurationUntilDeath;
     [SerializeField] private int organAmountRequired;
     
     
@@ -25,7 +25,7 @@ public class BedSpawner : MonoBehaviour
             timer = this.GetComponent<Timer>();
             if (timer == null)
             {
-                throw new NullReferenceException("Spawner timer wasn't found on GameObject: "+this.GetEntityId());
+                throw new NullReferenceException("Spawner timer wasn't found on GameObject: "+this.GetInstanceID());
             }
         }
         
@@ -53,7 +53,7 @@ public class BedSpawner : MonoBehaviour
             parentBedsObject?.transform
         );
         MedicalCoach medicalCoach = newBed.GetComponent<MedicalCoach>();
-        medicalCoach.SetOrganSwitchDuration(bedOrganSwitchDuration);
+        medicalCoach.SetOrganSwitchDuration(bedDurationUntilDeath);
         medicalCoach.SetOrgansRequired(organAmountRequired);
         
     }
@@ -62,7 +62,7 @@ public class BedSpawner : MonoBehaviour
     {
         this.maxBedsOnTheLevel = preset.maxBedsOnTheLevel;
         this.timer.SetDuration(preset.bedSpawnDuration);
-        this.bedOrganSwitchDuration = preset.bedOrganSwitchDuration;
+        this.bedDurationUntilDeath = preset.bedDurationUntilDeath;
         this.organAmountRequired = preset.organsPerBedRequired;
     }
 

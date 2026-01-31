@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PointsScaleSystem : MonoBehaviour
@@ -22,6 +23,31 @@ public class PointsScaleSystem : MonoBehaviour
     [SerializeField] private Gradient scoreGradient;
     [SerializeField] private int minValue = -10;
     [SerializeField] private int maxValue = 4;
+
+    [SerializeField] private List<GameObject> turnOffAfterDeath;
+    [SerializeField] private List<GameObject> turnOnAfterDeath;
+
+    [SerializeField] private AudioClip deathMusic;
+    private bool _finished = false;
+    
+    
+    
+    public void OnFinish()
+    {
+        _finished = true;
+        musicSource.clip = deathMusic;
+        musicSource.Play();
+        
+        foreach (var target in turnOffAfterDeath)
+        {
+            target.SetActive(false);
+        }
+        
+        foreach (var target in turnOnAfterDeath)
+        {
+            target.SetActive(true);
+        }
+    }
     
     public Color GetColorForInt(int value)
     {
@@ -72,6 +98,14 @@ public class PointsScaleSystem : MonoBehaviour
     
     public void OnScoreChanged(int score)
     {
+        if (_finished) return;
+        if (score < minValue)
+        {
+            OnFinish();
+            return;
+        }
+            
+            
         if (this.textRenderer != null)
         {
             this.textRenderer.text = currentScore.ToString();
@@ -101,6 +135,14 @@ public class PointsScaleSystem : MonoBehaviour
     {
         return currentScore;
     }
+    
+    public void RestartLevel()
+    {
+        var scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.buildIndex);
+    }
+    
+    
 }
 
 

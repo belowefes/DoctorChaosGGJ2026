@@ -5,13 +5,15 @@ using Code.Timer;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class BedSpawners : MonoBehaviour
+public class BedSpawner : MonoBehaviour
 {
     [SerializeField] private int maxBedsOnTheLevel = 5;
     [SerializeField] private List<Transform> slots;
     [SerializeField] private Timer timer;
     [SerializeField] private GameObject bedPrefab;
     [SerializeField] private GameObject parentBedsObject;
+    
+    
     
     private void Start()
     {
@@ -45,11 +47,19 @@ public class BedSpawners : MonoBehaviour
         {
             return;
         }
-        Instantiate<GameObject>(
+        GameObject newBed = Instantiate<GameObject>(
             bedPrefab,
             slots[Random.Range(0, slots.Count)].transform.position,
             Quaternion.identity,
             parentBedsObject?.transform
         );
+        MedicalCoach medicalCoach = newBed.GetComponent<MedicalCoach>();
+        
+    }
+    
+    
+    public void SetMaxBedsOnTheLevel(int value)
+    {
+        maxBedsOnTheLevel = value;
     }
 }

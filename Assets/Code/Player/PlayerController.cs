@@ -13,6 +13,10 @@ public class PlayerController : MonoBehaviour
     
     [SerializeField] private SpriteRenderer inHandsRenderer;
     [SerializeField] private PickupItem currentPickupInHands;
+    [SerializeField] private AudioSource sourceStepSound, sourceOrganSound;
+    
+    
+    
         
     Rigidbody2D rb;
 
@@ -39,6 +43,15 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 moveDirection = moveInput.ReadValue<Vector2>();
         rb.linearVelocity = moveDirection.normalized * moveSpeed;
+        if (moveDirection!=Vector2.zero && !sourceStepSound.isPlaying)
+        {
+            sourceStepSound.Play();
+        }
+
+        if (moveDirection == Vector2.zero && sourceStepSound.isPlaying)
+        {
+            sourceStepSound.Stop();
+        }
     }
 
     public bool ReceiveOrgan(PickupItem pickup)
@@ -47,9 +60,9 @@ public class PlayerController : MonoBehaviour
         {
             return false;
         }
-        
         if (pickup.pickupType == PickupType.Organ)
         {
+            sourceOrganSound.Play();
             SetInHands(pickup);
             return true;
         }

@@ -277,7 +277,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 941a11bedaaec124381377ad809769cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PauseLogic
-  pausePanel: {fileID: 0}
+  pauseInput:
+    m_Name: Pause Input
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 57716291-efd0-49b1-85d3-68a3593a176f
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 7f7bcaba-4e33-4ea7-9a4d-05c84c10cc7b
+      m_Path: <Keyboard>/escape
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Pause Input
+      m_Flags: 0
+    - m_Name: 
+      m_Id: b4ba36ad-a2f5-4b84-9bbc-1127e86292b8
+      m_Path: <Gamepad>/start
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Pause Input
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 972df27b-4678-4f24-b7e7-86f9260a987e
+      m_Path: <Gamepad>/select
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Pause Input
+      m_Flags: 0
+    m_Flags: 0
   turnOffAfterPause:
   - {fileID: 1000099156}
   - {fileID: 896736583}
